@@ -378,3 +378,27 @@ for requested_topping in requested_toppings:
         print(f"Dodaję {requested_topping}.")
 print("\nTwoja pizza jest już gotowa!")
 
+# sprawdzanie czy lista jest pusta 
+
+requested_toppings = []
+
+# lista zwraca True w "if" kiedy znajduje się w niej conajmniej jeden 
+# element
+
+if requested_toppings:
+    for requested_topping in requested_toppings:
+        print(f"Dodajemy {requested_topping}")
+else:
+    print("Czy na pewno nie chcesz dodatków?")
+
+
+# korzystanie z wielu list
+
+available_toppings = ['pieczarki', 'oliwki', 'boczek', 'pepperoni', 'ananas', 'podwójny ser']
+requested_toppings = ['pieczarki', 'frytki', 'podwójny ser'] 
+
+for requested_topping in requested_toppings:
+    if requested_topping in available_toppings:
+        print(f"Dodajemy składnik: {requested_topping}")
+    else:
+        print(f"Nie posiadamy składnika: {requested_topping}")
