@@ -450,4 +450,85 @@ favorite_language = {
     'zosia' : 'python'
 }
 
-print(f'Ulubiony język programowania Zosi to: {favorite_language['zosia'].title()}')
+print(f'Ulubiony język programowania Zosi:: {favorite_language['zosia'].title()}')
+
+# słownik.get('pierwsza część pary', 'wartość podstawowa)
+# jeśli w danym słowniku nie ma wartośc przypisanej do pary to wyświetli
+# wartość podstawową, natomiast gdy jest wyświetli wartość normalna
+
+alien_1['speed'] = 12
+speed_value = alien_1.get('speed', 'Nie podano wartośći')
+
+print(speed_value)
+
+# iteracja przez słownik
+
+
+# iteracja przez pare klucz-wartość
+
+user_0 = {
+'username': 'jkowalski', 
+'first': 'jan',
+'last': 'kowalski',
+}
+
+# słownik.items() - wartością zwracaną jest lista par klucz-wartość
+
+print(user_0.items())
+
+for k, v in user_0.items():
+    print(f'klucz {k}')
+    print(f'wartość {v}')
+
+# iteracja przez wszystkie klucze słownika
+
+# mozna tez uzyc:
+
+# for k in user_0:
+for k in user_0.keys():
+    print(f'Klucz: {k}')
+
+
+# przykład - keys()
+
+friends = ['patryk', 'wojtek']
+
+for name in favorite_language:
+    print(f'Witamy Ciebie {name}')
+    if name in friends:
+        print(f"""Cześć przyjacielu {name.title()}, wiemy ze Twoim ulubionym
+              językiem jest {favorite_language[name].title()}""")
+        
+# przykład keys()
+
+if 'elzbieta' not in favorite_language:
+    print("Elzbieta proszę weź udział w ankiecie")
+
+# iteracja przez uporządkowane klucze słownika
+
+print("Zgodnie z kolejnością alfabetyczną\n")
+for name in sorted(favorite_language):
+    print(f"HI {name}")
+
+# iteracja prrzez wszystkie wartosci słownika
+
+for v in user_0.values():
+    print(f'Wartość: {v}')
+
+# iteracja poprzez uzycie set()
+
+# set() - działa tak ze wychwyci tylko unikatowe wartosci, takie co sie 
+# nie powtarzają
+
+print("\nOto jakie jezyki programowania zostały wymienione")
+for lang in set(favorite_language.values()):
+    print(lang.title())
+
+# zbiory - czyli zbiór wartości 
+# jezeli natomiast wywołamy zbiór pokaza sie tylko unikatowe wartosci
+# czyli kazda wartosc nawet jeśli się powtarza, wyświetli się tylko raz
+
+print("\n WYŚWIETLENIE ZBIORU ")
+languages = {'python', 'c', 'rust','python', 'c', 'c++'}
+
+print(languages)
