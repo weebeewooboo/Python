@@ -402,3 +402,52 @@ for requested_topping in requested_toppings:
         print(f"Dodajemy składnik: {requested_topping}")
     else:
         print(f"Nie posiadamy składnika: {requested_topping}")
+
+# kopiowanie listy str zmieniając jej znaki
+
+current_users = ["admin", "Jack", "Tomb", "Destroyer", "Kupa"]
+cp_current_users = [user.lower() for user in current_users]
+
+
+# SŁOWNIKI SŁOWNIKI SŁOWNIKI
+# słowniki są nieograniczone
+# słowniki są dynamiczne, czyli mozna je modyfikować i dodawać
+
+alien_0 = {'color' : 'zielony', 'points': 5}
+
+alien_0["x_position"] = 0
+alien_0["y_position"] = 24
+print(alien_0["color"])
+print(alien_0["points"])
+print(f"""Współrzędne zabitego obcego: 
+{str(alien_0['x_position'])}x{str(alien_0['y_position'])}""")
+
+# praca z pustym słownikiem
+
+alien_1 = {}
+
+alien_1['color'] = "czerwony"
+alien_1['points'] = 15
+print(alien_1)
+
+# modyfikowanie wartość - uzyłem kodu z góry
+
+alien_1['color'] = "zółty"
+alien_1['points'] = 10
+print(alien_1)
+
+# usuwanie pary z słownika
+
+del alien_1["color"]
+print(alien_1)
+
+# tworzenie słowników wielu zmiennych
+
+favorite_language = {
+    'patryk' : 'c',
+    'sara' : 'python',
+    'wojtek' : 'rust',
+    'zosia' : 'python'
+}
+
+print(f'Ulubiony język programowania Zosi to: {favorite_language['zosia'].title()}')
