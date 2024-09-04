@@ -615,3 +615,95 @@ for user, user_info in users.items():
 
     print(f"\t Imie i Nazwisko: {full_name.title()}")
     print(f"\t Lokacja: {location.title()}")
+
+
+# DANE WEJŚCIOWE I PĘTLA WHILE
+
+# input()
+
+#name = input("Podaj swoje imie: ")
+print(name.title())
+
+# tworzenie dłuższych komunikatów
+
+prompt = '''Jeżeli powiesz nam, kim jesteś, spersonalizujemy wyświetlany 
+komunikat.'''
+prompt += '\nJak masz na imie: '
+
+#name = input(prompt)
+print(f"\nWitaj, {name.title()}!")
+
+# int() - formatowanie danych do zmiennej int
+
+#age = int(input("Podaj swój wiek: "))
+
+#if age > 12:
+    #print("Nie jesteś już dzieckiem!")
+
+# % - modulo - zwraca resztę z dzielenia
+# można użyć naprzykład do tego by rozróżniać liczby nieparzyste od parz
+
+#number = int(input("Podaj jakąś liczbę by sprawdzić czy jest parzysta: "))
+
+#if number%2==0:
+    #print("Liczba jest parzysta!")
+#else:
+    #print("Liczba jest nieparzysta!")
+
+# pętla while
+
+current_number = 1
+while current_number <=5:
+    print(current_number)
+    current_number += 1
+
+# program umożliwiający użytkownikowi skończyć program kiedy będzie chciał
+
+prompt = "Powiedz nam coś o sobie gamoniu:\nJeśli chcesz skończyć program napisz koniec. "
+
+message = ''
+while message != 'koniec':
+    message = input(prompt)
+    if message != 'koniec':
+        print(message)
+
+# używanie flagi
+
+prompt = "Powiedz nam coś o sobie gamoniu:\nJeśli chcesz skończyć program napisz koniec. "
+
+active = True
+while active:
+    message = input(prompt)
+    if message == 'koniec':
+        active = False
+    else:
+        print(message)
+
+# używanie break - powoduje zakończenie się pętli
+# można użyć w: while i for
+
+prompt = "Powiedz nam coś o sobie gamoniu:\nJeśli chcesz skończyć program napisz koniec. "
+
+
+while True:
+    message = input(prompt)
+    if message == 'koniec':
+        break
+    else:
+        print(message)
+
+# używanie continue - powoduje automatyczne przeskoczenie do dalszej
+# iteracji pętli bez wykonywanie następnych poleceń w danej pętli
+
+current_number = 0
+
+while current_number<10:
+    current_number +=1
+    if current_number%2 == 0:
+        continue
+    
+    print(current_number)
+    
+
+
+
