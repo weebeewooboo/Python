@@ -528,7 +528,90 @@ for lang in set(favorite_language.values()):
 # jezeli natomiast wywołamy zbiór pokaza sie tylko unikatowe wartosci
 # czyli kazda wartosc nawet jeśli się powtarza, wyświetli się tylko raz
 
-print("\n WYŚWIETLENIE ZBIORU ")
+print("\n WYŚWIETLENIE ZBIORU")
 languages = {'python', 'c', 'rust','python', 'c', 'c++'}
 
 print(languages)
+
+# ZAGNIEŻDŻENIE
+
+print("\n WYŚWIETLENIE ZAGNIEŻDŻENIA\n")
+alien_0 = {'color': 'zielony', 'points': 5} 
+alien_1 = {'color': 'żółty', 'points': 10}
+alien_2 = {'color': 'czerwony', 'points': 15}
+aliens = [alien_0, alien_1, alien_2]
+
+for alien in aliens:
+    print(alien)
+
+# tworzenie floty wrogów
+
+print("\n Tworzenie floty wrogów\n")
+
+aliens = []
+
+for i in range(5):
+    new_alien = {'color' : 'zielony', 'points' : 5, 'speed' : 'wolno'}
+    aliens.append(new_alien)
+
+for alien in aliens:
+    print(alien)
+
+print(f"\nCałkowita liczba wrogów to: {len(aliens)}")
+
+# praca z takimi wrogami - przykład
+
+for alien in aliens[:3]:
+    if alien['color'] == 'zielony':
+        alien['color'] = 'żółty'
+        alien['points'] = 10
+        alien['speed'] = 'średnio'
+    print(alien)
+
+# lista w słowniku
+
+pizza = {
+    'crust' : 'grube',
+    'toppings' : ['pieczarki', 'dodatkowy ser']
+}
+print('\nLista w słowniku\n')
+print(pizza['crust'])
+print(pizza['toppings'])
+
+# program - przykład
+
+favorite_languages = {
+    'janek': ['python', 'rust'], 
+    'sara': ['c'],
+    'edward': ['rust', 'go'], 
+    'paweł': ['python', 'haskell'],
+}
+
+for name, language in favorite_languages.items():
+    print(f"\n Ulubione języki programowania {name.title()} to: ")
+    for lang in language:
+        print(f'\t{lang.title()}')
+
+# słownik w słowniku
+
+users = { 
+    'aeinstein': {
+        'first': 'albert',
+        'last': 'einstein', 
+        'location': 'princeton',
+        },
+
+    'mcurie': {
+        'first': 'maria',
+        'last': 'skłodowska-curie',
+        'location': 'paryż',
+        },
+}
+
+for user, user_info in users.items():
+    print(f"Witamy użytkownika: {user}")
+    full_name = f"{user_info['first']} {user_info['last']}"
+    location = user_info['location']
+
+    print(f"\t Imie i Nazwisko: {full_name.title()}")
+    print(f"\t Lokacja: {location.title()}")
