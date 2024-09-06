@@ -703,7 +703,161 @@ while current_number<10:
         continue
     
     print(current_number)
+
+
+# przenoszenie elementów z jednej listy na drugą
+
+unconfirmed_users = ['Alicja', 'Bartek', 'Katarzyna']
+confirmed_users = []
+
+while unconfirmed_users:
+    confirmed_user = unconfirmed_users.pop()
+
+    print(f"Zweryfikowano użytkownika: {confirmed_user}")
+    confirmed_users.append(confirmed_user)
+
+print("Lista zweryfikowanych użytkowników: ")
+for user in confirmed_users:
+    print(f"\t{user}")
     
 
+# usuwanie z listy wszystkich egzemplarzy danej wartości
 
+pets = ['pies', 'kot', 'pies', 'złota rybka', 'kot', 'królik', 'kot']
+print(pets)
+
+while 'kot' in pets:
+    pets.remove('kot')
+
+print(pets)
+
+# umieszczanie w słowniku wartości wprowadzonych przez użytkownika
+
+responses = {}
+active = True
+
+while active:
+    name = input("Podaj nam swoje imie do ankiety: ")
+    response = input("Jaki język programowania lubisz?\n")
+
+    responses[name] = response
+
+    repeat = input("Wpisz 'tak' jeśli następna osoba chce rozpocząć ankiete\n")
+
+    if repeat.lower() != 'tak':
+        active = False
+
+print("Oto wyniki naszej ankiety:")
+for name,response in responses.items():
+    print(f"{name.title()} bardzo lubi język programowania: {response}")
+
+# FUNKCJE
+
+# definiowanie funkcji
+
+def greet_users():
+    # docstring '''komentarz''' - jego zadaniem jest opisanie funkcji
+    #ego rodzaje komen- tarze są ujęte w potrójny cudzysłów, który jest 
+    # wyszukiwany przez Pythona podczas generowania dokumentacji dla 
+    # funkcji zdefiniowanych w Twoich programach.
+    '''Wyświetla proste powitanie'''
+    print("Witaj")
+
+greet_users()
+
+# przekazywanie informacji do funkcji
+
+def user_age(age):
+    '''Wyświetla informacje o wieku użytkownika'''
+    print(f"Wiek użytkownika: {age}")
+
+user_age(13)
+
+# przekazywanie argumentów
+
+# argumenty pozycyjne
+
+def describe_pet(animal_type, pet_name):
+    '''Wyświetla informacje o Twoim zwierzaku'''
+    print(f"Rasa Twojego zwierzaka to: {animal_type}")
+    print(f"Twój {animal_type} ma na imie {pet_name.title()}")
+
+describe_pet("pies","Jack")
+
+# argumenty w postaci słów kluczowych
+# nie trzeba dbać o kolejność argumentów funkcji
+describe_pet(animal_type='pies',pet_name='jack')
+
+# wartości domyślne
+# jeśli zostaną podane argumenty python zignoruje wartości domyślne
+
+def describe_pet(pet_name, animal_type ='pies'):
+    '''Wyświetla informacje o Twoim zwierzaku'''
+    print(f"Rasa Twojego zwierzaka to: {animal_type}")
+    print(f"Twój {animal_type} ma na imie {pet_name.title()}")
+
+describe_pet("Jack")
+describe_pet("miś", 'kot')
+
+# wartość zwrotna - return
+
+def get_formatted_name(first_name, last_name):
+    '''Zwraca elegancko sformatowane pełne imie i nazwisko'''
+    full_name = f'{first_name.title()} {last_name.title()}'
+    return full_name
+
+print(get_formatted_name('karol', 'wojtyła'))
+
+# definiowanie argumentu jako opcjonalnego
+
+def get_formatted_name(first_name, last_name, middle_name=''):
+    '''Zwraca elegancko sformatowane pełne imie i nazwisko'''
+    if middle_name:
+        full_name = f"{first_name.title()} {middle_name.title()} {last_name.title()}"
+    else:
+        full_name = f'{first_name.title()} {last_name.title()}'
+    return full_name
+
+print(get_formatted_name('karol','wojtyła'))
+print(get_formatted_name('jan', 'Drugi', 'Paweł'))
+
+# zwrot słownika
+
+def build_person(first_name, last_name, age=None):
+    '''Budowanie osoby czyli słownika'''
+    person = {'first': first_name.title(), 'last' : last_name.title()}
+    if age:
+        person['wiek'] = age
+    return person
+
+print(build_person('karol', 'Wojtyła'))
+print(build_person('karol', 'Wojtyła',67))
+
+
+# używanie funkcji i pętli while 
+
+while True:
+    print("Proszę podać imie i nazwisko:")
+    print("Wpisz 'q' w dowolnym momencie by zakończyć pracę")
+    f_name = input("Imie: ")
+    if f_name == 'q':
+        break
+    l_name = input("Nazwisko: ")
+    if l_name == 'q':
+        break
+    formated_name = get_formatted_name(f_name,l_name)
+    print(f"Twoje imie i nazwisko: {formated_name}")
+    break
+
+# przekazywanie listy
+
+users = ['wojtek', 'paweł', 'piotrek']
+def greet_users(names):
+    '''Wyświetla przywitanie dla ludzi'''
+    for name in names:
+        print(f"Witaj, {name.title()}")
+
+greet_users(users)
+
+# modyfikowanie listy w funkcji
 
