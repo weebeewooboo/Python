@@ -861,3 +861,61 @@ greet_users(users)
 
 # modyfikowanie listy w funkcji
 
+unprinted_designs = ['etui telefonu', 'robot pendant', 'dwunastościan']
+completed_designs = []
+
+def print_models(unprinted_designs, completed_designs):
+    '''Funkcja zajmująca się wydrukiem modeli'''
+    while unprinted_designs:
+        complete_model = unprinted_designs.pop()
+        print(f"Trwa drukowanie modelu: {complete_model}")
+        completed_designs.append(complete_model)
+    
+
+def show_printed(completed_designs):
+    for design in completed_designs:
+        print(f"Wydrukowano model: {design}")
+
+# używamy tutaj przy liście [:], aby funkcja nie modyfikowała wartości
+# natomiast przekaże funkcji tylko jej kopię, pozostawiajac oryginał 
+# bez naruszenia !!! (MARNUJE CZAS I PAMIĘĆ)
+
+# ważne jest by jednak korzystać z prawdziwej funkcji ponieważ program 
+# wtedy wykorzystuje więcej pamięci na stworzenie nowej kopi
+# i pracowanie na niej
+print_models(unprinted_designs[:],completed_designs)
+show_printed(completed_designs)
+print(unprinted_designs)
+print(completed_designs)
+
+# przekazywanie dowolnej liczby argumentów 
+# def nazwa_funkcji(*argument)
+
+def make_pizza(*toppings):
+    '''Funkcja tworząca pizze'''
+    print("Przygotowuj pizze z następującymi dodatkami:")
+    for topping in toppings:
+        print(f"- {topping}")
+
+make_pizza('piieczarki')
+make_pizza('pieczarki','dodatkowy ser', 'ketchup')
+
+# argumenty pozycyjne i przekazywanie dowolnej liczby argumentów
+
+def make_pizza(size, *toppings):
+    '''Funkcja tworząca pizze'''
+    print(f"Przygotowuj pizze {size}cm z następującymi dodatkami:")
+    for topping in toppings:
+        print(f"- {topping}")
+
+make_pizza(40,'piieczarki')
+make_pizza(30,'pieczarki','dodatkowy ser', 'ketchup')
+
+# używanie dowolnej liczby argumentów w postaci słów kluczowych
+
+
+
+
+
+
+    
