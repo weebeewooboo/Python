@@ -924,6 +924,48 @@ user_profile = build_profile('albert', 'einstein', location = 'princeton',
 
 print(user_profile)
 
+# przechowywanie funkcji w modułach
+# jest to przechowywanie funkcji w innym pliku określanym modułem, a 
+# następnie importować ten moduł do programu, w którym mają być wywoływane
+# funkcje danego modułu
+
+# import całego modułu 
+
+import pizza
+
+pizza.make_pizza(40, 'pepperoni')
+pizza.make_pizza(30, 'pieczarki', 'zielona papryka', 'podwójny ser')
+
+# import określonych funkcji
+
+# syntax 
+# from nazwa_modułu import nazwa_funkcji
+
+# można też wiele funkcji
+
+# from nazwa_modułu import nazwa_funkcji_0, nazwa_funkcji_1,
+# nazwa_funkcji_2
+
+# przykład
+
+from pizza import make_pizza
+
+make_pizza(40, 'pepperoni')
+make_pizza(30, 'pieczarki', 'zielona papryka', 'podwójny ser')
+
+# użycie słowa kluczowego as w celu zdefiniowania aliasu funkcji
+
+# gdy nazwa importowanej funkcji może kolidować z nazwą funkcji
+# istniejącej już w programie, lub też ta nazwa jest zbyt długa, 
+# wówczas można zastosować skrót 
+
+from pizza import make_pizza as mp
+
+mp(40, 'pepperoni')
+mp(30, 'pieczarki', 'zielona papryka', 'podwójny ser')
+
+
+
 
 
 
